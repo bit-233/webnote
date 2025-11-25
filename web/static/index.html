@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Server Notes</title>
+  <link rel="stylesheet" href="/static/styles.css" />
+  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+</head>
+<body>
+  <div id="toastContainer" class="toast-container"></div>
+  <header class="top-bar">
+    <div class="brand">Server Notes</div>
+    <input id="searchInput" type="search" placeholder="搜索标题..." />
+    <input id="tagFilter" type="search" placeholder="标签过滤（单个标签）" />
+    <button id="newNoteBtn">新建笔记</button>
+    <button id="loginBtn">登录</button>
+    <button id="logoutBtn" class="secondary">登出</button>
+  </header>
+  <main class="layout">
+    <aside class="sidebar">
+      <ul id="noteList"></ul>
+    </aside>
+    <section class="editor">
+      <div class="field">
+        <label for="titleInput">标题</label>
+        <input id="titleInput" type="text" placeholder="输入标题" />
+      </div>
+      <div class="field">
+        <label for="tagsInput">标签（逗号分隔）</label>
+        <input id="tagsInput" type="text" placeholder="如：工作,随记" />
+      </div>
+      <div class="field">
+        <label for="contentInput">正文</label>
+        <textarea id="contentInput" rows="12" placeholder="支持 Markdown"></textarea>
+      </div>
+      <div class="actions">
+        <button id="saveBtn">保存</button>
+        <button id="deleteBtn" class="danger">删除</button>
+      </div>
+      <p class="hotkeys">快捷键：Ctrl/⌘ + S 保存，Ctrl/⌘ + Shift + N 新建</p>
+      <div class="preview">
+        <h3>预览</h3>
+        <div id="previewArea"></div>
+      </div>
+    </section>
+  </main>
+  <script src="/static/main.js"></script>
+</body>
+</html>
